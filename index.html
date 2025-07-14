@@ -1,10 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-  <title>Merhaba Dünya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adınız Soyadınız - Kişisel Web Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts - Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Selam!</h1>
-  <p>Bu benim ilk GitHub Pages sitem.</p>
+    <!-- Sabit Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#ana-sayfa">Adınız Soyadınız</a>
+            </div>
+            
+            <!-- Hamburger menü (mobil için) -->
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#ana-sayfa" class="nav-link active">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#oyun-yorumlari" class="nav-link">Oyun Yorumları</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog-yazilari" class="nav-link">Blog Yazıları</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#hakkimda" class="nav-link">Hakkımda</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <main class="main-content">
+        <!-- Ana Sayfa Bölümü -->
+        <section id="ana-sayfa" class="section hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Merhaba, Ben <span class="highlight">Adınız Soyadınız</span></h1>
+                    <p class="hero-subtitle">Hoş geldiniz! Bu benim kişisel web sitem.</p>
+                    <p class="hero-description">
+                        Burada oyun yorumlarım, blog yazılarım ve hakkımda bilgiler bulabilirsiniz. 
+                        Teknoloji, oyunlar ve yazılım dünyasına dair içerikler paylaşıyorum.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#hakkimda" class="btn btn-primary">Hakkımda</a>
+                        <a href="#blog-yazilari" class="btn btn-secondary">Blog Yazıları</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oyun Yorumları Bölümü -->
+        <section id="oyun-yorumlari" class="section">
+            <div class="container">
+                <h2 class="section-title">Oyun Yorumları</h2>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3>Örnek Oyun İncelemesi</h3>
+                        <p>Bu bölümde oyun yorumlarınız yer alacak. Her oyun için ayrı kartlar kullanabilirsiniz.</p>
+                        <span class="date">15 Ocak 2025</span>
+                    </div>
+                    <div class="card">
+                        <h3>Başka Bir Oyun İncelemesi</h3>
+                        <p>Oyun yorumlarınızı burada paylaşabilir, puanlama sistemi ekleyebilirsiniz.</p>
+                        <span class="date">10 Ocak 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Yazıları Bölümü -->
+        <section id="blog-yazilari" class="section">
+            <div class="container">
+                <h2 class="section-title">Blog Yazıları</h2>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3>İlk Blog Yazım</h3>
+                        <p>Bu bölümde blog yazılarınız yer alacak. Teknik konular, kişisel deneyimler ve daha fazlası.</p>
+                        <span class="date">12 Ocak 2025</span>
+                    </div>
+                    <div class="card">
+                        <h3>Teknoloji Hakkında</h3>
+                        <p>Teknoloji dünyasındaki gelişmeler, yeni trendler ve kişisel görüşleriniz.</p>
+                        <span class="date">8 Ocak 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hakkımda Bölümü -->
+        <section id="hakkimda" class="section">
+            <div class="container">
+                <h2 class="section-title">Hakkımda</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Merhaba! Ben [Adınız Soyadınız]. Bu bölümde kendiniz hakkında bilgi verebilirsiniz.
+                            İlgi alanlarınız, deneyimleriniz, eğitim durumunuz ve hobileriniz hakkında bilgiler paylaşabilirsiniz.
+                        </p>
+                        <p>
+                            Teknoloji ve oyun dünyasıyla ilgili içerikler üretmeyi seviyorum. 
+                            Bu sitede deneyimlerimi ve düşüncelerimi paylaşıyorum.
+                        </p>
+                        <div class="skills">
+                            <h3>İlgi Alanları</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Oyun Geliştirme</span>
+                                <span class="skill-tag">Web Tasarım</span>
+                                <span class="skill-tag">Yazılım</span>
+                                <span class="skill-tag">Teknoloji</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adınız Soyadınız. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling için
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        }
+
+        // Active link güncelleme
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobil menüyü kapatma
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.nav-toggle').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
