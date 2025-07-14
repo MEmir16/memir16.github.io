@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Yazısı Başlığı - Adınız Soyadınız</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Blog post özel stilleri */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .blog-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.3;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            color: var(--text-muted);
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+        
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .blog-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: var(--font-size-lg);
+        }
+        
+        .blog-content h2 {
+            color: var(--text-primary);
+            font-size: var(--font-size-xl);
+            margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+            font-weight: 600;
+        }
+        
+        .blog-content h3 {
+            color: var(--text-primary);
+            font-size: var(--font-size-lg);
+            margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+            font-weight: 600;
+        }
+        
+        .blog-content p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .blog-content ul, .blog-content ol {
+            margin: var(--spacing-md) 0;
+            padding-left: var(--spacing-lg);
+        }
+        
+        .blog-content li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .blog-content blockquote {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .blog-content code {
+            background-color: var(--card-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: var(--accent-color);
+        }
+        
+        .blog-content pre {
+            background-color: var(--card-bg);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: var(--spacing-md) 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .blog-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+        
+        .blog-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--spacing-2xl);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--border-color);
+            gap: var(--spacing-md);
+        }
+        
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .nav-button:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .back-to-blog {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        
+        .back-to-blog:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-navigation {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-button {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (aynı navbar) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Adınız Soyadınız</a>
+            </div>
+            
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#ana-sayfa" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#oyun-yorumlari" class="nav-link">Oyun Yorumları</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#blog-yazilari" class="nav-link active">Blog Yazıları</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#hakkimda" class="nav-link">Hakkımda</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <article class="blog-post">
+            <!-- Blog Header -->
+            <header class="blog-header">
+                <h1 class="blog-title">Modern Web Tasarımında Yeni Trendler</h1>
+                <div class="blog-meta">
+                    <span>📅 14 Temmuz 2025</span>
+                    <span>⏱️ 5 dk okuma</span>
+                    <span>🏷️ Teknoloji, Web Tasarım</span>
+                </div>
+            </header>
+
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <p>
+                    Modern web tasarımı sürekli gelişen bir alan. Bu yazıda, 2025 yılında öne çıkan web tasarım trendlerini ve geliştiriciler olarak bunları nasıl projelerimize entegre edebileceğimizi inceleyeceğiz.
+                </p>
+
+                <h2>1. Koyu Tema (Dark Mode) Hakimiyeti</h2>
+                <p>
+                    Koyu tema artık sadece bir seçenek değil, kullanıcıların beklediği bir standart haline geldi. 
+                    Göz yorgunluğunu azaltması, batarya tasarrufu sağlaması ve modern görünümü sayesinde 
+                    çoğu uygulama ve web sitesinde varsayılan olarak kullanılıyor.
+                </p>
+
+                <blockquote>
+                    "İyi tasarım, kullanıcının fark etmediği tasarımdır." - Steve Jobs
+                </blockquote>
+
+                <h2>2. Responsive Tasarımın Önemi</h2>
+                <p>
+                    Mobil cihazların artan kullanımı ile responsive tasarım artık zorunluluk haline geldi. 
+                    İşte modern responsive tasarımın temel prensipleri:
+                </p>
+
+                <ul>
+                    <li>Mobile-first yaklaşım</li>
+                    <li>Esnek grid sistemleri</li>
+                    <li>Uyarlanabilir görsel öğeler</li>
+                    <li>Touch-friendly arayüzler</li>
+                </ul>
+
+                <h3>CSS Grid vs Flexbox</h3>
+                <p>
+                    Modern web tasarımında layout oluşturmak için CSS Grid ve Flexbox'ı doğru şekilde kullanmak kritik önem taşıyor.
+                </p>
+
+                <pre><code>/* CSS Grid örneği */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}</code></pre>
+
+                <h2>3. Mikro Animasyonlar</h2>
+                <p>
+                    Küçük animasyonlar kullanıcı deneyimini büyük ölçüde iyileştiriyor. 
+                    Hover efektleri, loading animasyonları ve geçişler web sitesine canlılık katıyor.
+                </p>
+
+                <p>
+                    Bu trendleri takip ederek, modern ve kullanıcı dostu web siteleri tasarlayabilirsiniz. 
+                    Önemli olan, teknolojik yenilikleri kullanıcı deneyimini iyileştirecek şekilde entegre etmektir.
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="blog-navigation">
+                <a href="index.html#blog-yazilari" class="nav-button back-to-blog">
+                    ← Tüm Blog Yazıları
+                </a>
+                <a href="#" class="nav-button">
+                    Sonraki Yazı →
+                </a>
+            </nav>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adınız Soyadınız. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        }
+
+        // Mobil menüyü kapatma
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.nav-toggle').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
